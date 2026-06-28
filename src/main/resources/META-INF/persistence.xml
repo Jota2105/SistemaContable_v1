@@ -13,6 +13,7 @@
         <class>com.sistema.facturacion.modelo.CiudadEntrega</class>
         <class>com.sistema.facturacion.modelo.FacturaCabecera</class>
         <class>com.sistema.facturacion.modelo.FacturaDetalle</class>
+        <class>com.sistema.cxc.modelo.Log_JDAH</class>
 
         <!-- Entidades cxc -->
         <class>com.sistema.cxc.modelo.Cobrador</class>

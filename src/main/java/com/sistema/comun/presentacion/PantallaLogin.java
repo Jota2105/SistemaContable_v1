@@ -22,7 +22,7 @@ public class PantallaLogin {
             Usuario admin = new Usuario();
             admin.setIdUsuario(1);
             admin.setUsername("admin");
-            admin.setContrasena("admin123");
+            admin.setContrasena("admin1234");
             admin.setRol("ADMIN");
             admin.setFechaCreacion(new Date());
             negocio.insertar(admin);

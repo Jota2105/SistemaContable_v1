@@ -3,6 +3,7 @@ package com.sistema.cxc.negocio;
 import com.sistema.cxc.modelo.Cobrador;
 import javax.persistence.*;
 import java.util.List;
+import com.sistema.cxc.negocio.NegocioLog_JDAH;
 
 public class NegocioCobrador {
 
@@ -28,12 +29,19 @@ public class NegocioCobrador {
 
             em.persist(cobrador);
             em.getTransaction().commit();
+
+            NegocioLog_JDAH negocioAuditoriaJDAH = new NegocioLog_JDAH();
+            negocioAuditoriaJDAH.registrarAuditoriaJDAH("Insercion");
+
+
             return true;
         } catch (Exception e) {
             if (em != null && em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
             }
             e.printStackTrace();
+
+
             return false;
         } finally {
             if (em != null) em.close();
@@ -101,6 +109,10 @@ public class NegocioCobrador {
                 em.remove(c);
             }
             tx.commit();
+
+            NegocioLog_JDAH negocioAuditoriaJDAH = new NegocioLog_JDAH();
+            negocioAuditoriaJDAH.registrarAuditoriaJDAH("Eliminacion");
+
             return 1;
         } catch (Exception e) {
             if (tx != null && tx.isActive()) tx.rollback();

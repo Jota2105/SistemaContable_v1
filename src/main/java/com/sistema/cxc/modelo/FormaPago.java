@@ -17,7 +17,7 @@ public class FormaPago implements Serializable {
     public FormaPago() {
     }
 
-    // Getters y Setters
+
     public Integer getCodigo() { return codigo; }
     public void setCodigo(Integer codigo) { this.codigo = codigo; }
 
